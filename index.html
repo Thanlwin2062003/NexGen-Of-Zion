@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="icon" href="design5/image/icon.png" type="image/png">
+    <link rel="alternate icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Apple/Safari Touch Icons -->
+    <link rel="apple-touch-icon" href="design5/image/icon.png">
+    <title>NexGen Of Zion - Christian Ministry & Mission Work</title>
+    <meta name="description" content="NexGen Of Zion demonstrates Christ's love through English education, youth fellowship, and compassionate outreach in underserved communities.">
+    
+    <!-- Preload important resources -->
+    <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" as="style">
+    
+    <!-- CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22></text></svg>">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A8A',
+                        'primary-dark': '#1E40AF',
+                        secondary: '#B45309',
+                        cross: '#DC2626',
+                        light: '#F8FAFC',
+                        dark: '#1F2937',
+                    },
+                    fontFamily: {
+                        sans: ['"Open Sans"', 'sans-serif'],
+                        serif: ['"Merriweather"', 'serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-in-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            padding-top: 80px;
+            font-family: 'Open Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+        }
+        
+        .cross-icon {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .cross-icon:before {
+            content: "✝";
+            position: absolute;
+            left: -25px;
+            color: #DC2626;
+            font-size: 1.2em;
+        }
+        
+        .mobile-menu {
+            transition: all 0.3s ease;
+            max-height: 0;
+            overflow: hidden;
+        }
+        
+        .mobile-menu.open {
+            max-height: 500px;
+        }
+        
+        .bible-verse {
+            background: linear-gradient(rgba(30, 58, 138, 0.9), rgba(30, 58, 138, 0.9));
+            border-left: 4px solid #DC2626;
+        }
+        
+        .hero-overlay {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .feature-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .cross-icon:before {
+                left: -20px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body class="text-gray-800 bg-gray-50">
+    <!-- Fixed Navigation -->
+    <header class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                 
+                <a href="#" class="text-primary font-bold text-2xl flex items-center">
+                
+                    NexGen Of Zion
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:block">
+                    <ul class="flex space-x-8">
+                        <li><a href="#about" class="font-medium hover:text-primary transition duration-300">About</a></li>
+                        <li><a href="#ministry" class="font-medium hover:text-primary transition duration-300">Ministry</a></li>
+                        <li><a href="#stories" class="font-medium hover:text-primary transition duration-300">Testimonies</a></li>
+                        <li><a href="#activities" class="font-medium hover:text-primary transition duration-300">Mission Work</a></li>
+                        <li><a href="#contact" class="font-medium hover:text-primary transition duration-300">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuButton" class="md:hidden text-2xl focus:outline-none" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobileMenu" class="mobile-menu md:hidden bg-white border-t">
+                <ul class="space-y-3 px-4 py-4">
+                    <li><a href="#about" class="block px-4 py-2 hover:bg-gray-50 rounded transition duration-300">About</a></li>
+                    <li><a href="#ministry" class="block px-4 py-2 hover:bg-gray-50 rounded transition duration-300">Ministry</a></li>
+                    <li><a href="#stories" class="block px-4 py-2 hover:bg-gray-50 rounded transition duration-300">Testimonies</a></li>
+                    <li><a href="#activities" class="block px-4 py-2 hover:bg-gray-50 rounded transition duration-300">Mission Work</a></li>
+                    <li><a href="#contact" class="block px-4 py-2 hover:bg-gray-50 rounded transition duration-300">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative flex items-center justify-center text-white min-h-screen overflow-hidden">
+        <div class="absolute inset-0 hero-overlay"></div>
+        <div class="hero-image bg-cover bg-center absolute inset-0" style="background-image: url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80');"></div>
+        
+        <div class="relative z-20 px-4 text-center max-w-4xl mx-auto animate-fade-in">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Sharing Christ's Love Through Service</h1>
+            <p class="text-xl md:text-2xl mb-8">Empowering the next generation through English education, youth fellowship, and compassionate outreach</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="bg-primary hover:bg-primary-dark text-white font-bold py-3 px-6 rounded-lg transition duration-300">Get Involved</a>
+                <a href="#about" class="bg-white hover:bg-gray-100 text-primary font-bold py-3 px-6 rounded-lg transition duration-300">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-4 cross-icon">About Our Ministry</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Called to serve in Christ's name since 2005</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <div class="bg-white p-8 rounded-lg shadow-md feature-card">
+                    <h3 class="text-2xl font-bold text-primary mb-4">Our Mission</h3>
+                    <p class="mb-4">We exist to bring the light of Christ to remote and underserved communities through free English education, youth fellowship, and compassionate outreach.</p>
+                    <p>Inspired by Matthew 5:14, we aim to empower the next generation spiritually and practically so they can shine as lights in their communities and live out God's purpose for their lives.</p>
+                    <div class="mt-6 p-4 bg-blue-50 rounded-lg border-l-4 border-primary">
+                        <p class="italic">"You are the light of the world. A city set on a hill cannot be hidden."</p>
+                        <p class="font-semibold mt-2">- Matthew 5:14 (ESV)</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md feature-card">
+                    <h3 class="text-2xl font-bold text-primary mb-4">Our Approach</h3>
+                    <p class="mb-4">We serve through three core ministry areas:</p>
+                    <ul class="space-y-4">
+                        <li>
+                            <h4 class="font-bold text-lg text-secondary">English for the Margins</h4>
+                            <p>We offer free English classes to children and youth in remote areas, helping them gain skills that open opportunities for education, work, and communication beyond their villages.</p>
+                        </li>
+                        <li>
+                            <h4 class="font-bold text-lg text-secondary">Youth Fellowship & Discipleship</h4>
+                            <p>We host regular youth gatherings focused on spiritual growth, leadership, and building Christ-centered friendships encouraging young people to grow strong in faith and character.</p>
+                        </li>
+                        <li>
+                            <h4 class="font-bold text-lg text-secondary">Community Outreach</h4>
+                            <p>We walk alongside families and communities by offering practical support, encouragement, prayer, and presence. We believe true ministry means showing up with both the gospel and compassion.</p>
+                        </li>
+                    </ul>
+                    <p class="mt-4 font-semibold">Our approach is rooted in relationship, built on faith, and driven by a desire to see lives transformed by God's love.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ministry Work -->
+    <section id="ministry" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-4 cross-icon">Our Ministry Work</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Serving physical and spiritual needs worldwide</p>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-cross feature-card">
+                    <div class="text-primary text-3xl mb-4">
+                        <i class="fas fa-bible"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Bible Ministry</h3>
+                    <p class="text-gray-600">Distributing Scriptures and teaching God's Word in local languages.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-cross feature-card">
+                    <div class="text-primary text-3xl mb-4">
+                        <i class="fas fa-bread-slice"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Food Ministry</h3>
+                    <p class="text-gray-600">Providing meals with prayer and Christian fellowship.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-cross feature-card">
+                    <div class="text-primary text-3xl mb-4">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Christian Education</h3>
+                    <p class="text-gray-600">Schools combining academics with biblical teaching.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-cross feature-card">
+                    <div class="text-primary text-3xl mb-4">
+                        <i class="fas fa-hands-praying"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Discipleship</h3>
+                    <p class="text-gray-600">Training local leaders for church planting and ministry.</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="#activities" class="inline-block bg-primary hover:bg-primary-dark text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                    See Our Mission Activities
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities/Mission Work -->
+    <section id="activities" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-4 cross-icon">Mission Activities</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Join us in sharing Christ's love through service</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <!-- English Teaching Program -->
+                <div class="bg-white p-8 rounded-lg shadow-lg feature-card">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-primary text-white p-3 rounded-full mr-4">
+                            <i class="fas fa-language text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-primary">English Teaching Ministry</h3>
+                    </div>
+                    <p class="mb-4">Our Christian English program serves dual purposes:</p>
+                    <ul class="list-disc pl-5 space-y-2 mb-6">
+                        <li>Teach practical English skills for better opportunities</li>
+                        <li>Use Bible-based curriculum to share the Gospel</li>
+                        <li>Train local believers to become English teachers</li>
+                        <li>Provide English Bibles and Christian literature</li>
+                    </ul>
+                    <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-primary">
+                        <p class="italic">"Our English classes open doors to share Jesus in places where direct evangelism is restricted."</p>
+                        <p class="font-semibold mt-2">- Sarah, Missionary Teacher</p>
+                    </div>
+                </div>
+                
+                <!-- Other Mission Activities -->
+                <div class="space-y-6">
+                    <div class="bg-white p-6 rounded-lg shadow-md flex items-start feature-card">
+                        <div class="bg-cross text-white p-2 rounded-full mr-4 mt-1">
+                            <i class="fas fa-church"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Short-Term Missions</h3>
+                            <p class="text-gray-600">Join 1-2 week mission trips combining service projects with evangelism.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md flex items-start feature-card">
+                        <div class="bg-cross text-white p-2 rounded-full mr-4 mt-1">
+                            <i class="fas fa-hand-holding-medical"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Medical Missions</h3>
+                            <p class="text-gray-600">Christian healthcare professionals providing care and spiritual comfort.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md flex items-start feature-card">
+                        <div class="bg-cross text-white p-2 rounded-full mr-4 mt-1">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Disaster Response</h3>
+                            <p class="text-gray-600">Bringing emergency relief with Christian compassion and hope.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md flex items-start feature-card">
+                        <div class="bg-cross text-white p-2 rounded-full mr-4 mt-1">
+                            <i class="fas fa-child"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Child Sponsorship</h3>
+                            <p class="text-gray-600">Support children's education and spiritual development.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonies -->
+    <section id="stories" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-4 cross-icon">Faith Testimonies</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Stories of God's work through our ministry</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden feature-card">
+                    <img src="../design5/image/English_lesson.jpeg" alt="Bible study" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-3">English Class Conversion</h3>
+                        <p class="text-gray-600 mb-4">How an ESL student in China came to Christ through our Bible-based English program.</p>
+                        <p>English Language Program for Seniors</p>
+                        <p>Bridging Generations Through Communication</p>
+
+                        <p><strong>Why Learn English in Your Golden Years?</strong></p>
+                        <li> Stay connected with family abroad</li>
+                        <li>Navigate healthcare, travel, and technology with confidence</li>
+                        <li>Keep your mind active and make new friends </li>
+                        <li>Enjoy English books, films, and music</li>
+
+                        <p><strong>Our Specialized Senior-Friendly Classes Include:</strong></p>
+                        <li>  Slow-paced, stress-free learning</li>
+                        <li>Practical everyday vocabulary</li>
+                        <li>Patient, experienced teachers </li>
+                        <li>Comfortable small-group sessions</li>
+                        <li> Flexible morning/afternoon schedules</li>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden feature-card">
+                    <img src="../design5/image/caring_old_people.jpg" alt="Food distribution" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-3">Helping old people</h3>
+                        <p class="text-gray-600 mb-4">At NexGen Of Zion, we believe that every senior deserves care, respect, and companionship. Many elderly individuals face loneliness or need help with daily tasks—and that’s where you can make a difference.</p>
+
+ <p>Whether you can spare an hour to chat, assist with errands, or organize activities, your kindness can brighten a senior’s day. Small actions create big impacts.</p>
+
+<p>How You Can Help:
+<li>✅ Companionship – Visit or call isolated seniors.</li>
+<li>✅ Practical Help – Assist with groceries, meals, or light chores.</li>
+<li>✅ Skills & Hobbies – Share a talent (music, crafts, reading).</li>
+<li>✅ Event Support – Help organize social gatherings.</li></p>
+
+<p></p>Join us in making our community a warmer, more supportive place for older adults. Together, we can ensure they feel valued and cared for.</p>
+                        
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden feature-card hover:shadow-lg transition duration-300">
+    <img src="../design5/image/fellowship.jpeg" alt="Elderly fellowship volunteers sharing meal with seniors" class="w-full h-48 object-cover">
+    <div class="p-6">
+        <h3 class="text-xl font-bold text-primary mb-3">Fellowship Volunteers</h3>
+        <p class="text-gray-600 mb-4">How companionship transforms lives - for both seniors and volunteers.</p>
+        
+        <!-- Activity Highlights -->
+        <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-blue-50 text-blue-600 px-3 py-1 rounded-full text-sm">Weekly Visits</span>
+            <span class="bg-green-50 text-green-600 px-3 py-1 rounded-full text-sm">Memory Cafés</span>
+            <span class="bg-purple-50 text-purple-600 px-3 py-1 rounded-full text-sm">Skill Sharing</span>
+        </div>
+        <p><strong>Why Become a Fellowship Volunteer?</strong></p>
+        <li>🤝 Build meaningful connections with like-minded helpers</li>
+        <li>❤️ Directly impact vulnerable seniors' lives</li>
+        <li>🎓 Gain skills in elderly care, event planning, and community leadership</li>
+        <li>🌱 Grow personally through service reflection sessions</li>
+        
+       
+    </div>
+</div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="#" class="inline-block bg-primary hover:bg-primary-dark text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                    View More Testimonies
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-4 cross-icon">Contact Our Ministry</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Get involved in God's work</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <div class="bg-white p-8 rounded-lg shadow-md feature-card">
+                    <h3 class="text-2xl font-bold text-primary mb-6">Ministry Information</h3>
+                    <div class="space-y-4">
+                        <p class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-primary mt-1 mr-3"></i>
+                            <span>Chiang Mai, Thailand</span>
+                        </p>
+                        <p class="flex items-center">
+                            <i class="fas fa-envelope text-primary mr-3"></i>
+                            <span>zimiknathanael@gmail.com</span>
+                        </p>
+                                    
+                        <p class="flex items-center">
+                            <i class="fas fa-clock text-primary mr-3"></i>
+                            <span>Office Hours: M-F 9am-5pm (GMT+7)</span>
+                        </p>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="text-lg font-bold text-primary mb-4">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://www.facebook.com/profile.php?id=61565650081599" class="text-gray-600 hover:text-primary text-xl transition duration-300" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="text-gray-600 hover:text-primary text-xl transition duration-300" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="text-gray-600 hover:text-primary text-xl transition duration-300" aria-label="YouTube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md feature-card">
+                    <h3 class="text-2xl font-bold text-primary mb-6">Send Us a Message</h3>
+                    <form>
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 mb-2">Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 mb-2">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="block text-gray-700 mb-2">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+                        </div>
+                        <button type="submit" class="bg-primary hover:bg-primary-dark text-white font-bold py-3 px-6 rounded-lg transition duration-300 w-full">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-4 max-w-4xl text-center">
+            <h2 class="text-3xl font-bold mb-4">Stay Connected</h2>
+            <p class="mb-8 text-blue-100">Subscribe to our newsletter for ministry updates and prayer requests</p>
+            
+            <form class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
+                <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-white text-gray-800">
+                <button type="submit" class="bg-white text-primary font-bold py-3 px-6 rounded-lg hover:bg-gray-100 transition duration-300">
+                    Subscribe
+                </button>
+            </form>
+            
+            <p class="mt-4 text-sm text-blue-100">We respect your privacy. Unsubscribe at any time.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8 max-w-6xl mx-auto">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                       
+                        NexGen Of Zion
+                    </h3>
+                    <p class="mb-4">Demonstrating Christ's love by meeting physical and spiritual needs worldwide.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/profile.php?id=61565650081599" class="text-gray-300 hover:text-white text-xl transition duration-300" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white text-xl transition duration-300" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white text-xl transition duration-300" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Ministry</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-gray-300 hover:text-white transition duration-300">Our Mission</a></li>
+                        <li><a href="#ministry" class="text-gray-300 hover:text-white transition duration-300">Our Work</a></li>
+                        <li><a href="#activities" class="text-gray-300 hover:text-white transition duration-300">Activities</a></li>
+                        <li><a href="#stories" class="text-gray-300 hover:text-white transition duration-300">Testimonies</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Get Involved</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Mission Trips</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Teach English</a></li>
+                        
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Donate</a></li>
+                    </ul>
+                </div>
+                
+            
+            </div>
+            
+            <div class="pt-8 border-t border-gray-700 text-center text-gray-400">
+                <p>&copy; 2024 NexGen Of Zion. All rights reserved.</p>
+                
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-primary text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuButton.addEventListener('click', function() {
+            mobileMenu.classList.toggle('open');
+            this.querySelector('i').classList.toggle('fa-bars');
+            this.querySelector('i').classList.toggle('fa-times');
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.remove('open');
+                mobileMenuButton.querySelector('i').classList.add('fa-bars');
+                mobileMenuButton.querySelector('i').classList.remove('fa-times');
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Back to top button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Add animation to elements when they come into view
+        const animateOnScroll = function() {
+            const elements = document.querySelectorAll('.feature-card, .animate-fade-in');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Set initial state for animated elements
+        document.querySelectorAll('.feature-card, .animate-fade-in').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        });
+        
+        window.addEventListener('load', animateOnScroll);
+        window.addEventListener('scroll', animateOnScroll);
+    </script>
+</body>
+</html>
