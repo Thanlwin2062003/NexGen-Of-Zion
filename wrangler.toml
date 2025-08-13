@@ -1,0 +1,8 @@
+name = "NexGen_Of_Zion"
+compatibility_date = "2025-08-13"
+
+type = "javascript"
+
+[site]
+bucket = "./"
+entry-point = ""
