@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="icon" href="design5/image/icon.png" type="image/png">
-    <link rel="alternate icon" href="favicon.ico" type="image/x-icon">
-    
-    <!-- Apple/Safari Touch Icons -->
-    <link rel="apple-touch-icon" href="design5/image/icon.png">
+    <!-- Fixed favicon paths -->
+    <link rel="icon" href="https://raw.githubusercontent.com/Thanlwin2062003/NexGen-Of-Zion/main/image/logo.jpg" type="image/jpg">
+    <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/Thanlwin2062003/NexGen-Of-Zion/main/image/logo.jpg">
     <title>NexGen Of Zion - Christian Ministry & Mission Work</title>
     <meta name="description" content="NexGen Of Zion demonstrates Christ's love through English education, youth fellowship, and compassionate outreach in underserved communities.">
     
@@ -20,9 +18,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22></text></svg>">
     
     <script>
         tailwind.config = {
@@ -107,10 +102,59 @@
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
         }
         
+        /* Responsive improvements */
         @media (max-width: 768px) {
             .cross-icon:before {
                 left: -20px;
                 font-size: 1em;
+            }
+            
+            .hero-text {
+                padding: 0 1rem;
+            }
+            
+            .feature-card, .ministry-card {
+                margin: 0.5rem;
+            }
+            
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            /* Fix for mobile navigation */
+            #mobileMenu {
+                position: absolute;
+                left: 0;
+                right: 0;
+                background: white;
+                z-index: 1000;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding-top: 70px;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+        }
+        
+        /* Logo styling */
+        .logo {
+            height: 50px;
+            width: auto;
+        }
+        
+        @media (max-width: 768px) {
+            .logo {
+                height: 40px;
             }
         }
     </style>
@@ -120,9 +164,9 @@
     <header class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center h-20">
-                 
+                <!-- Added logo image with proper source -->
                 <a href="#" class="text-primary font-bold text-2xl flex items-center">
-                
+                    <img src="https://raw.githubusercontent.com/Thanlwin2062003/NexGen-Of-Zion/main/image/logo.jpg" alt="NexGen Of Zion Logo" class="logo mr-2">
                     NexGen Of Zion
                 </a>
                 
@@ -161,9 +205,9 @@
         <div class="absolute inset-0 hero-overlay"></div>
         <div class="hero-image bg-cover bg-center absolute inset-0" style="background-image: url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80');"></div>
         
-        <div class="relative z-20 px-4 text-center max-w-4xl mx-auto animate-fade-in">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6">Sharing Christ's Love Through Service</h1>
-            <p class="text-xl md:text-2xl mb-8">Empowering the next generation through English education, youth fellowship, and compassionate outreach</p>
+        <div class="relative z-20 px-4 text-center max-w-4xl mx-auto animate-fade-in hero-text">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 hero-title">Sharing Christ's Love Through Service</h1>
+            <p class="text-xl md:text-2xl mb-8 hero-subtitle">Empowering the next generation through English education, youth fellowship, and compassionate outreach</p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <a href="#contact" class="bg-primary hover:bg-primary-dark text-white font-bold py-3 px-6 rounded-lg transition duration-300">Get Involved</a>
                 <a href="#about" class="bg-white hover:bg-gray-100 text-primary font-bold py-3 px-6 rounded-lg transition duration-300">Learn More</a>
@@ -222,7 +266,7 @@
             </div>               
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
     <!-- Donation Section -->
-    <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-cross feature-card">
+    <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-cross feature-card ministry-card">
         <div class="text-primary text-3xl mb-4">
             <i class="fas fa-hand-holding-heart"></i> <!-- Works in FA5+ -->
         </div>
@@ -231,7 +275,7 @@
     </div>
     
     <!-- Teaching Section -->
-    <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-cross feature-card">
+    <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-cross feature-card ministry-card">
         <div class="text-primary text-3xl mb-4">
             <i class="fas fa-chalkboard-teacher"></i> <!-- Works in FA5+ -->
         </div>
@@ -240,7 +284,7 @@
     </div>
     
     <!-- Community Section -->
-    <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-cross feature-card">
+    <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-cross feature-card ministry-card">
         <div class="text-primary text-3xl mb-4">
             <i class="fas fa-users"></i> <!-- Classic "people" icon (FA5+) -->
         </div>
@@ -348,9 +392,9 @@
 </a>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-primary mb-3">Helping Community </h3>
-                        <p class="text-gray-600 mb-4">At NexGen Of Zion, we believe that every senior deserves care, respect, and companionship. Many elderly individuals face loneliness or need help with daily tasks—and that’s where you can make a difference.</p>
+                        <p class="text-gray-600 mb-4">At NexGen Of Zion, we believe that every senior deserves care, respect, and companionship. Many elderly individuals face loneliness or need help with daily tasks—and that's where you can make a difference.</p>
 
- <p>Whether you can spare an hour to chat, assist with errands, or organize activities, your kindness can brighten a senior’s day. Small actions create big impacts.</p>
+ <p>Whether you can spare an hour to chat, assist with errands, or organize activities, your kindness can brighten a senior's day. Small actions create big impacts.</p>
 
 <p>How You Can Help:
 <li>✅ Companionship – Visit or call isolated seniors.</li>
@@ -441,7 +485,7 @@
             <div class="grid md:grid-cols-4 gap-8 mb-8 max-w-6xl mx-auto">
                 <div>
                     <h3 class="text-xl font-bold mb-4 flex items-center">
-                       
+                        <img src="https://raw.githubusercontent.com/Thanlwin2062003/NexGen-Of-Zion/main/image/logo.jpg" alt="NexGen Of Zion Logo" class="logo mr-2">
                         NexGen Of Zion
                     </h3>
                     <p class="mb-4">Demonstrating Christ's love by meeting physical and spiritual needs worldwide.</p>
@@ -575,14 +619,3 @@
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
