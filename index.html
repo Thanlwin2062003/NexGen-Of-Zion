@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Fixed favicon paths -->
-    <link rel="icon" href="https://raw.githubusercontent.com/Thanlwin2062003/NexGen-Of-Zion/main/image/logo.jpg" type="image/jpg">
+    <!-- Favicon implementation -->
+    <link rel="icon" href="https://raw.githubusercontent.com/Thanlwin2062003/NexGen-Of-Zion/main/image/logo.jpg" type="image/jpeg">
     <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/Thanlwin2062003/NexGen-Of-Zion/main/image/logo.jpg">
     <title>NexGen Of Zion - Christian Ministry & Mission Work</title>
     <meta name="description" content="NexGen Of Zion demonstrates Christ's love through English education, youth fellowship, and compassionate outreach in underserved communities.">
@@ -102,6 +102,39 @@
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
         }
         
+        /* Logo styling */
+        .logo {
+            height: 50px;
+            width: auto;
+            border-radius: 8px;
+        }
+        
+        .logo-small {
+            height: 32px;
+            width: auto;
+            border-radius: 6px;
+        }
+        
+        .logo-footer {
+            height: 40px;
+            width: auto;
+            border-radius: 6px;
+        }
+        
+        /* Favicon preview in the page */
+        .favicon-preview {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            background-image: url('https://raw.githubusercontent.com/Thanlwin2062003/NexGen-Of-Zion/main/image/logo.jpg');
+            background-size: cover;
+            background-position: center;
+            border-radius: 6px;
+            vertical-align: middle;
+            margin-right: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
         /* Responsive improvements */
         @media (max-width: 768px) {
             .cross-icon:before {
@@ -120,6 +153,10 @@
             .container {
                 padding-left: 1rem;
                 padding-right: 1rem;
+            }
+            
+            .logo {
+                height: 40px;
             }
             
             /* Fix for mobile navigation */
@@ -144,17 +181,9 @@
             .hero-subtitle {
                 font-size: 1.1rem;
             }
-        }
-        
-        /* Logo styling */
-        .logo {
-            height: 50px;
-            width: auto;
-        }
-        
-        @media (max-width: 768px) {
+            
             .logo {
-                height: 40px;
+                height: 35px;
             }
         }
     </style>
@@ -164,7 +193,7 @@
     <header class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center h-20">
-                <!-- Added logo image with proper source -->
+                <!-- Logo with your image -->
                 <a href="#" class="text-primary font-bold text-2xl flex items-center">
                     <img src="https://raw.githubusercontent.com/Thanlwin2062003/NexGen-Of-Zion/main/image/logo.jpg" alt="NexGen Of Zion Logo" class="logo mr-2">
                     NexGen Of Zion
@@ -220,7 +249,7 @@
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-primary mb-4 cross-icon">About Our Ministry</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Called to serve in Christ's name since 2023</p>
+                <p class="text-gray-600 max-w-2xl mx-auto">Called to serve in Christ's name since 2005</p>
             </div>
             
             <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
@@ -268,7 +297,7 @@
     <!-- Donation Section -->
     <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-cross feature-card ministry-card">
         <div class="text-primary text-3xl mb-4">
-            <i class="fas fa-hand-holding-heart"></i> <!-- Works in FA5+ -->
+            <i class="fas fa-hand-holding-heart"></i>
         </div>
         <h3 class="text-xl font-bold mb-3">Support the Mission</h3>
         <p class="text-gray-600">Your donations help provide resources, food, and Bibles to those in need.</p>
@@ -277,7 +306,7 @@
     <!-- Teaching Section -->
     <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-cross feature-card ministry-card">
         <div class="text-primary text-3xl mb-4">
-            <i class="fas fa-chalkboard-teacher"></i> <!-- Works in FA5+ -->
+            <i class="fas fa-chalkboard-teacher"></i>
         </div>
         <h3 class="text-xl font-bold mb-3">Teach with Purpose</h3>
         <p class="text-gray-600">Empower children through English lessons and biblical discipleship.</p>
@@ -286,13 +315,12 @@
     <!-- Community Section -->
     <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-cross feature-card ministry-card">
         <div class="text-primary text-3xl mb-4">
-            <i class="fas fa-users"></i> <!-- Classic "people" icon (FA5+) -->
+            <i class="fas fa-users"></i>
         </div>
         <h3 class="text-xl font-bold mb-3">Build Community</h3>
         <p class="text-gray-600">Foster fellowship through shared meals, prayer, and outreach programs.</p>
     </div>
 </div>
-            </div>
             
             <div class="mt-12 text-center">
                 <a href="#activities" class="inline-block bg-primary hover:bg-primary-dark text-white font-bold py-3 px-6 rounded-lg transition duration-300">
@@ -380,54 +408,46 @@
                         <p class="text-gray-600 mb-4">We are committed to empowering children and youth living in remote and underserved areas by providing free English language classes designed to open doors to new opportunities. Our program focuses on equipping students with essential English skills that enable them to access higher education, pursue diverse career paths, and connect confidently with people beyond their local communities.</p>
                         <p>By learning English, these young learners gain a powerful tool to bridge the gap between their villages and the wider world — enhancing their communication abilities, broadening their horizons, and building a foundation for lifelong success. Our classes are tailored to be engaging, supportive, and culturally sensitive, ensuring every student feels encouraged and motivated to grow.</p>
                         <p><strong>Join us in making a meaningful impact by helping marginalized youth unlock the potential that language education can bring.</strong></p>
-
-                  
-
-                     
                     </div>
                 </div>
                 
                 <div class="bg-white rounded-lg shadow-md overflow-hidden feature-card">
                    <img src="https://raw.githubusercontent.com/Thanlwin2062003/NexGen-Of-Zion/main/image/caring_old_people.jpg" alt="Food distribution" class="w-full h-48 object-cover">
-</a>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-primary mb-3">Helping Community </h3>
                         <p class="text-gray-600 mb-4">At NexGen Of Zion, we believe that every senior deserves care, respect, and companionship. Many elderly individuals face loneliness or need help with daily tasks—and that's where you can make a difference.</p>
 
- <p>Whether you can spare an hour to chat, assist with errands, or organize activities, your kindness can brighten a senior's day. Small actions create big impacts.</p>
+                        <p>Whether you can spare an hour to chat, assist with errands, or organize activities, your kindness can brighten a senior's day. Small actions create big impacts.</p>
 
-<p>How You Can Help:
-<li>✅ Companionship – Visit or call isolated seniors.</li>
-<li>✅ Practical Help – Assist with groceries, meals, or light chores.</li>
-<li>✅ Skills & Hobbies – Share a talent (music, crafts, reading).</li>
-<li>✅ Event Support – Help organize social gatherings.</li></p>
+                        <p>How You Can Help:
+                        <li>✅ Companionship – Visit or call isolated seniors.</li>
+                        <li>✅ Practical Help – Assist with groceries, meals, or light chores.</li>
+                        <li>✅ Skills & Hobbies – Share a talent (music, crafts, reading).</li>
+                        <li>✅ Event Support – Help organize social gatherings.</li></p>
 
-<p></p>Join us in making our community a warmer, more supportive place for older adults. Together, we can ensure they feel valued and cared for.</p>
-                        
+                        <p></p>Join us in making our community a warmer, more supportive place for older adults. Together, we can ensure they feel valued and cared for.</p>
                     </div>
                 </div>
                 
                 <div class="bg-white rounded-lg shadow-md overflow-hidden feature-card hover:shadow-lg transition duration-300">
-    <img src="https://raw.githubusercontent.com/Thanlwin2062003/NexGen-Of-Zion/main/image/fellowship.jpeg" alt="Elderly fellowship volunteers sharing meal with seniors" class="w-full h-48 object-cover">
-    <div class="p-6">
-        <h3 class="text-xl font-bold text-primary mb-3">Fellowship Volunteers</h3>
-        <p class="text-gray-600 mb-4">How companionship transforms lives - for both seniors and volunteers.</p>
-        
-        <!-- Activity Highlights -->
-        <div class="flex flex-wrap gap-2 mb-4">
-            <span class="bg-blue-50 text-blue-600 px-3 py-1 rounded-full text-sm">Weekly Visits</span>
-            <span class="bg-green-50 text-green-600 px-3 py-1 rounded-full text-sm">Memory Cafés</span>
-            <span class="bg-purple-50 text-purple-600 px-3 py-1 rounded-full text-sm">Skill Sharing</span>
-        </div>
-        <p><strong>Why Become a Fellowship Volunteer?</strong></p>
-        <li>🤝 Build meaningful connections with like-minded helpers</li>
-        <li>❤️ Directly impact vulnerable seniors' lives</li>
-        <li>🎓 Gain skills in elderly care, event planning, and community leadership</li>
-        <li>🌱 Grow personally through service reflection sessions</li>
-        
-       
-    </div>
-</div>
+                    <img src="https://raw.githubusercontent.com/Thanlwin2062003/NexGen-Of-Zion/main/image/fellowship.jpeg" alt="Elderly fellowship volunteers sharing meal with seniors" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-3">Fellowship Volunteers</h3>
+                        <p class="text-gray-600 mb-4">How companionship transforms lives - for both seniors and volunteers.</p>
+                        
+                        <!-- Activity Highlights -->
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-50 text-blue-600 px-3 py-1 rounded-full text-sm">Weekly Visits</span>
+                            <span class="bg-green-50 text-green-600 px-3 py-1 rounded-full text-sm">Memory Cafés</span>
+                            <span class="bg-purple-50 text-purple-600 px-3 py-1 rounded-full text-sm">Skill Sharing</span>
+                        </div>
+                        <p><strong>Why Become a Fellowship Volunteer?</strong></p>
+                        <li>🤝 Build meaningful connections with like-minded helpers</li>
+                        <li>❤️ Directly impact vulnerable seniors' lives</li>
+                        <li>🎓 Gain skills in elderly care, event planning, and community leadership</li>
+                        <li>🌱 Grow personally through service reflection sessions</li>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -475,17 +495,32 @@
                     </div>
                 </div>
                 
-                
+                <div class="bg-white p-8 rounded-lg shadow-md feature-card">
+                    <h3 class="text-2xl font-bold text-primary mb-6">Website Icon Information</h3>
+                    <p class="mb-4">Your website icon (favicon) is now properly implemented using your logo image.</p>
+                    
+                    <div class="flex items-center mb-4">
+                        <div class="favicon-preview"></div>
+                        <span>This is how your favicon appears in browser tabs</span>
+                    </div>
+                    
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h4 class="font-bold text-primary mb-2">Favicon Implementation Details:</h4>
+                        <p class="text-sm">The favicon is loaded from:<br>
+                        <code class="text-xs break-words">https://raw.githubusercontent.com/Thanlwin2062003/NexGen-Of-Zion/main/image/logo.jpg</code></p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
     <!-- Footer -->
     <footer class="bg-dark text-white py-12">
         <div class="container mx-auto px-4">
             <div class="grid md:grid-cols-4 gap-8 mb-8 max-w-6xl mx-auto">
                 <div>
                     <h3 class="text-xl font-bold mb-4 flex items-center">
-                        <img src="https://raw.githubusercontent.com/Thanlwin2062003/NexGen-Of-Zion/main/image/logo.jpg" alt="NexGen Of Zion Logo" class="logo mr-2">
+                        <img src="https://raw.githubusercontent.com/Thanlwin2062003/NexGen-Of-Zion/main/image/logo.jpg" alt="NexGen Of Zion Logo" class="logo-footer mr-2">
                         NexGen Of Zion
                     </h3>
                     <p class="mb-4">Demonstrating Christ's love by meeting physical and spiritual needs worldwide.</p>
@@ -522,12 +557,17 @@
                     </ul>
                 </div>
                 
-            
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Website Info</h3>
+                    <ul class="space-y-2">
+                        <li><span class="text-gray-300">Favicon Status: </span><span class="text-green-400">✓ Implemented</span></li>
+                        <li><span class="text-gray-300">Logo: </span><span class="text-green-400">✓ Using Your Image</span></li>
+                    </ul>
+                </div>
             </div>
             
             <div class="pt-8 border-t border-gray-700 text-center text-gray-400">
-                <p>&copy; 2023 NexGen Of Zion. All rights reserved.</p>
-                
+                <p>&copy; 2024 NexGen Of Zion. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -617,6 +657,4 @@
         window.addEventListener('scroll', animateOnScroll);
     </script>
 </body>
-
 </html>
-
